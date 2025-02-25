@@ -43,3 +43,5 @@ Follow the steps below to set up and run the application:
     14d8341a32caca64967494b33ffea1180cb688fdaa229fe06044748411e99a7a
     5. **E2B API**
     e2b_61aea8e65eb070d07930cfa2c053f89bc13d6ff4
+## Live Streamlit App
+https://aidatavisualizationagent-tsvbrbp5dzko6orj5x57ax.streamlit.app/
