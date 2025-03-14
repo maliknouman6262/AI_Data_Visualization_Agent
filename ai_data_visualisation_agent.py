@@ -123,11 +123,15 @@ def main():
         )
         st.session_state.model_name = model_options[st.session_state.model_name]
 
-    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+    uploaded_file = st.file_uploader("Choose a CSV or Excel file", type=["csv", "xlsx"])
     
     if uploaded_file is not None:
-        # Display dataset with toggle
-        df = pd.read_csv(uploaded_file)
+        # Determine file type and read data accordingly
+        if uploaded_file.name.endswith('.csv'):
+            df = pd.read_csv(uploaded_file)
+        elif uploaded_file.name.endswith('.xlsx'):
+            df = pd.read_excel(uploaded_file)
+        
         st.write("Dataset:")
         show_full = st.checkbox("Show full dataset")
         if show_full:
@@ -169,8 +173,8 @@ def main():
                                 st.pyplot(fig)  # Display using st.pyplot
                             elif hasattr(result, 'show'):  # For plotly figures
                                 st.plotly_chart(result)
-                            elif isinstance(result, (pd.DataFrame, pd.Series)):
-                                st.dataframe(result)
+                            elif isinstance(result, (pd.DataFrame, pd.Series)) or hasattr(result, 'show'):
+                                st.plotly_chart(result)
                             else:
                                 st.write(result)  
 
