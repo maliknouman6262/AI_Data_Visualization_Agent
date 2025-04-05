@@ -1,3 +1,9 @@
+##  **Developed By** `Muhammad Nouman` 
+## Contact Information
+- **Email**: maliknouman6262@gmail.com
+- **Phone Number**: +923086338740
+
+
 # 📊 AI Data Visualization Agent
 A Streamlit application that acts as your personal data visualization expert, powered by LLMs. Simply upload your dataset and ask questions in natural language - the AI agent will analyze your data, generate appropriate visualizations, and provide insights through a combination of charts, statistics, and explanations.
 
